@@ -1,5 +1,7 @@
 from configupdater import ConfigUpdater, Option
 import argparse
+import shutil
+import time
 
 
 def upsert(updater: ConfigUpdater, section: str, key: str, value: str):
@@ -9,7 +11,6 @@ def upsert(updater: ConfigUpdater, section: str, key: str, value: str):
         if not updater.has_section(section):
             updater.add_section(section)
             updater.get_section(section).add_before.space()
-
         o = Option(key, value)
         updater.get_section(section).add_option(o)
 
@@ -364,4 +365,5 @@ if __name__ == "__main__":
     upsert(updater, "Financial Settings", "SELL_ITEMS_WITH_ALT_LMB", "TRUE")
     upsert(updater, "Financial Settings", "SELL_ITEMS_PRICE_MODIFIER", "10")
 
+    shutil.copy2(args.filepath, f'{args.filepath}.BACKUP{time.time_ns()}')
     updater.update_file()

@@ -365,5 +365,11 @@ if __name__ == "__main__":
     upsert(updater, "Financial Settings", "SELL_ITEMS_WITH_ALT_LMB", "TRUE")
     upsert(updater, "Financial Settings", "SELL_ITEMS_PRICE_MODIFIER", "10")
 
+    # Keine zu krassen Werte, weil bei Stuermen sind die Werte verdoppelt!
+    upsert(updater, "Tactical Weather Settings", "ALLOW_RAIN", "TRUE")
+    upsert(updater, "Tactical Weather Settings", "WEAPON_RELIABILITY_REDUCTION_PER_RAIN_INTENSITY", "0")
+    upsert(updater, "Tactical Weather Settings", "BREATH_GAIN_REDUCTION_PER_RAIN_INTENSITY", "17")
+    upsert(updater, "Tactical Weather Settings", "VISUAL_DISTANCE_DECREASE_PER_RAIN_INTENSITY", "17")
+
     shutil.copy2(args.filepath, f'{args.filepath}.BACKUP{time.time_ns()}')
     updater.update_file()

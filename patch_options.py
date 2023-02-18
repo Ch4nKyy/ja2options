@@ -128,15 +128,14 @@ if __name__ == "__main__":
     upsert(updater, "Tactical Difficulty Settings", "AGILITY_SUBPOINTS_TO_IMPROVE", "35")
 
     # Suppression Fire ist eigentlich eine coole Mechanik.
-    # Es bufft indirekt Automatikwaffen.
+    # Es bufft Automatikwaffen.
     # Es macht Kaempfe aber weniger dynamisch.
-    # Gegner profitieren aber mehr davon, weil sie mehr sind und mehr sprayen.
-    # Deswegen aktiviere ich nur ein bisschen Suppression und gebe den Gegner weniger davon.
-    # Habe 200 getestet und es war viel zu viel! Vanilla ist 0!
-    # TODO ist es richtig rum eingestellt? TESTEN!
+    # Gegner profitieren mehr davon, weil sie mehr sind und mehr sprayen.
+    # Deswegen aktiviere ich nur ein bisschen Suppression und mache es gegen AI effektiver.
+    # Habe 200 gegen Spieler getestet und es war viel zu viel! Vanilla ist 0!
     upsert(updater, "Tactical Suppression Fire Settings", "SUPPRESSION_EFFECTIVENESS", "50")
-    upsert(updater, "Tactical Suppression Fire Settings", "SUPPRESSION_EFFECTIVENESS_PLAYER", "200")
-    upsert(updater, "Tactical Suppression Fire Settings", "SUPPRESSION_EFFECTIVENESS_AI", "100")
+    upsert(updater, "Tactical Suppression Fire Settings", "SUPPRESSION_EFFECTIVENESS_PLAYER", "100")
+    upsert(updater, "Tactical Suppression Fire Settings", "SUPPRESSION_EFFECTIVENESS_AI", "200")
     upsert(updater, "Tactical Suppression Fire Settings", "NOTIFY_WHEN_PINNED_DOWN", "TRUE")
     upsert(updater, "Tactical Suppression Fire Settings", "MIN_DISTANCE_FRIENDLY_SUPPRESSION", "30")
     # Ich will, dass Suppression Fire von Anfang bis Ende etwa konstant bleibt.

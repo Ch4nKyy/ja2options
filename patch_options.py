@@ -78,6 +78,7 @@ if __name__ == "__main__":
 
     # Nervt, dauert doch eh schon laenger mit schlechter Leadership!
     upsert(updater, "Militia Training Settings", "LEADERSHIP_AFFECTS_MILITIA_QUANTITY", "FALSE")
+    upsert(updater, "Militia Training Settings", "MINIMUM_LEADERSHIP_TO_TRAIN_MILITIA", "0")
 
     # Ich will keine Militia managen, sondern meine Mercs…
     upsert(updater, "Mobile Militia Training Settings", "ALLOW_MOBILE_MILITIA", "FALSE")

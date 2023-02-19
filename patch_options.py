@@ -80,10 +80,21 @@ if __name__ == "__main__":
     upsert(updater, "Militia Training Settings", "LEADERSHIP_AFFECTS_MILITIA_QUANTITY", "FALSE")
     upsert(updater, "Militia Training Settings", "MINIMUM_LEADERSHIP_TO_TRAIN_MILITIA", "0")
 
+    # Arulco Revisited und Vengeance Reloaded haben doppelt so grosse Staedte,
+    # ich will aber nicht doppelt so lange auf Militia warten, deswegen verdoppel ich die Rate.
+    upsert(updater, "Militia Training Settings", "MILITIA_TRAINING_RATE", "8")
+    upsert(updater, "Financial Settings", "MILITIA_BASE_TRAINING_COST", "375")
+
+    # Manchmal greifen die Gegner mit 15 Elite-Soldaten an. Da reichen 20 hellblaue nicht.
+    # Ich will meine Mercs spielen, keine Militia...
+    upsert(updater, "Militia Training Settings", "ALLOW_TRAINING_ELITE_MILITIA", "FALSE")
+    upsert(updater, "Militia Training Settings", "MAX_MILITIA_PER_SECTOR", "30")
+    upsert(updater, "Militia Training Settings", "NUM_MILITIA_TRAINED_PER_SESSION", "15")
+
     # Ich will keine Militia managen, sondern meine Mercs…
     upsert(updater, "Mobile Militia Training Settings", "ALLOW_MOBILE_MILITIA", "FALSE")
 
-    # Hell no.
+    # Hell no, lasst meine Items in Ruhe.
     upsert(updater, "Militia Equipment Settings", "MILITIA_USE_SECTOR_EQUIPMENT", "FALSE")
 
     # Startgeld
@@ -109,9 +120,6 @@ if __name__ == "__main__":
     # Ich will keine Assassinen unter den Militia...
     # Kaempfe eh nie zusammen mit denen, also ist egal.
     upsert(updater, "Tactical Difficulty Settings", "ENEMY_ASSASSINS", "FALSE")
-
-    # Vanilla settings
-    upsert(updater, "Militia Training Settings", "ALLOW_TRAINING_ELITE_MILITIA", "FALSE")
 
     # Schneller!
     upsert(updater, "Graphics Settings", "MILITIA_TURN_SPEED_UP_FACTOR", "0.0")

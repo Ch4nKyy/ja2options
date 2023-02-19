@@ -379,5 +379,9 @@ if __name__ == "__main__":
     upsert(updater, "Tactical Weather Settings", "BREATH_GAIN_REDUCTION_PER_RAIN_INTENSITY", "17")
     upsert(updater, "Tactical Weather Settings", "VISUAL_DISTANCE_DECREASE_PER_RAIN_INTENSITY", "17")
 
+    # Vanilla ist glaub 100? 1.13 Default ist 5. Aber dann sind Camo Kits ja mega useless...
+    # Zu gut sollte man es aber wsl nicht machen, weil sonst Ghili Suits unnoetig werden.
+    upsert(updater, "Tactical Gameplay Settings", "CAMO_KIT_USABLE_AREA", "20")
+
     shutil.copy2(args.filepath, f'{args.filepath}.BACKUP{time.time_ns()}')
     updater.update_file()

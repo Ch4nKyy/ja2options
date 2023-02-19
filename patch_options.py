@@ -361,11 +361,6 @@ if __name__ == "__main__":
     upsert(updater, "Tactical Interface Settings", "ALLOW_LAZY_CIVILIANS", "TRUE")
     upsert(updater, "Tactical Interface Settings", "WE_SEE_WHAT_MILITIA_SEES_AND_VICE_VERSA", "TRUE")
 
-    # Ich mag den Vanilla Style mehr
-    upsert(updater, "Tactical Interface Settings", "NOCTOVISION_NIGHT_RADAR_MAP", "FALSE")
-    upsert(updater, "Tactical Interface Settings", "MONOCHROMATIC_RADAR_MAP", "FALSE")
-    upsert(updater, "Tactical Interface Settings", "MONOCHROMATIC_OVERHEAD_MAP", "FALSE")
-
     # VSync off
     upsert(updater, "Graphics Settings", "VERTICAL_SYNC", "FALSE")
 
